@@ -1,7 +1,7 @@
 ﻿namespace SimpleAzureML.Request
 {
-    public interface IRequest
+    internal interface IRequest
     {
-           
+        //bool SendRequest();
     }
 }

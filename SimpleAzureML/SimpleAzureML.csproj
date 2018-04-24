@@ -1,12 +1,68 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Version>1.0.3</Version>
+    <Authors>Vaclav Jirovsky</Authors>
+    <Company>
+    </Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Platforms>AnyCPU;x86</Platforms>
+    <PackageLicenseUrl>https://labs.vjirovsky.cz/simple-azureml/licence.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://labs.vjirovsky.cz/simple-azureml/</PackageProjectUrl>
+    <Copyright>© Vaclav Jirovsky, 2018</Copyright>
+    <PackageReleaseNotes>added support for .NET Framework 4.5.1</PackageReleaseNotes>
+    <Description>
+Do you have problem to use Azure Machine Learing Web Service?
+
+This SDK provides easy access for AMLWS on .NET based applications.
+    </Description>
+    <PackageTags>azure machinelearning aml amlws webservice microsoft</PackageTags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ProjectGuid>d8729aee-c6bc-4a7e-93ce-0a811c331dcc</ProjectGuid>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extension\" />
+    <Folder Include="Exception\" />
+    <Folder Include="Model\Azure\" />
+    <Folder Include="Request\" />
+  </ItemGroup>
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>0.1.0</Version>
-    <Authors>Vaclav Jirovsky</Authors>
-    <Company></Company>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <TargetFrameworks>netstandard2.0;net461;net46;net452;net451</TargetFrameworks> 
   </PropertyGroup>
+
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+    <AssemblyTitle>SimpleAzureML .NET Standard 2.0</AssemblyTitle>
+    <DefineConstants>NET_STANDARD_2_0;$(AdditionalConstants)</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='net461'">
+    <AssemblyTitle>SimpleAzureML .NET 4.6.1</AssemblyTitle>
+    <DefineConstants>NET_4_6_1;$(AdditionalConstants)</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)'=='net46'">
+    <AssemblyTitle>SimpleAzureML .NET 4.6</AssemblyTitle>
+    <DefineConstants>NET_4_6;$(AdditionalConstants)</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)'=='net452'">
+    <AssemblyTitle>SimpleAzureML .NET 4.5.2</AssemblyTitle>
+    <DefineConstants>NET_4_5_2;$(AdditionalConstants)</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)'=='net451'">
+    <AssemblyTitle>SimpleAzureML .NET 4.5.2</AssemblyTitle>
+    <DefineConstants>NET_4_5_1;$(AdditionalConstants)</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net46' OR '$(TargetFramework)' == 'net452' OR '$(TargetFramework)' == 'net451'">
+    <PackageReference Include="Microsoft.Net.Http" Version="2.2.*" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Threading.Tasks" />
+  </ItemGroup>
 
 </Project>

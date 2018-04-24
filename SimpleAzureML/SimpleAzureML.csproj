@@ -3,19 +3,17 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Version>1.0.3</Version>
     <Authors>Vaclav Jirovsky</Authors>
-    <Company>
-    </Company>
+    <Company>Vaclav Jirovsky</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Platforms>AnyCPU;x86</Platforms>
-    <PackageLicenseUrl>https://labs.vjirovsky.cz/simple-azureml/licence.txt</PackageLicenseUrl>
-    <PackageProjectUrl>https://labs.vjirovsky.cz/simple-azureml/</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/vjirovsky/SimpleAzureML/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/vjirovsky/SimpleAzureML/</PackageProjectUrl>
     <Copyright>© Vaclav Jirovsky, 2018</Copyright>
-    <PackageReleaseNotes>added support for .NET Framework 4.5.1</PackageReleaseNotes>
-    <Description>
-Do you have problem to use Azure Machine Learing Web Service?
+    <PackageReleaseNotes>added support for .NET Framework 4.5.1, added docs</PackageReleaseNotes>
+    <Description>Do you have problem to use Azure Machine Learing Web Service?
 
 This SDK provides easy access for AMLWS on .NET based applications.
-    </Description>
+</Description>
     <PackageTags>azure machinelearning aml amlws webservice microsoft</PackageTags>
     <OldToolsVersion>2.0</OldToolsVersion>
     <ProjectGuid>d8729aee-c6bc-4a7e-93ce-0a811c331dcc</ProjectGuid>
@@ -33,7 +31,9 @@ This SDK provides easy access for AMLWS on .NET based applications.
   </ItemGroup>
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net461;net46;net452;net451</TargetFrameworks> 
+    <TargetFrameworks>netstandard2.0;net461;net46;net452;net451</TargetFrameworks>
+    <RepositoryUrl>https://github.com/vjirovsky/SimpleAzureML/blob/master/README.md</RepositoryUrl>
+    <RepositoryType>git</RepositoryType> 
   </PropertyGroup>
 
 
